@@ -1,4 +1,4 @@
-# Voithru AI Translation Factory (Flow)
+# Auto-Translation-Quote-Service
 
 이 프로젝트는 CrewAI Flow를 사용하여 번역 프로젝트의 인테이크부터 견적 발송까지를 자동화합니다.
 
