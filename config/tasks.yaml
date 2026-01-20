@@ -1,0 +1,25 @@
+filter_email_task:
+  description: >
+    Gmail에서 최근 24시간 이내의 이메일을 검색하여 '견적 요청' 혹은 'Translation Request' 
+    키워드가 포함된 메일의 본문을 읽어오십시오.
+  expected_output: "발신자, 요청 언어, 마감 기한이 포함된 정형화된 데이터."
+  agent: receptionist
+
+calculate_quote_task:
+  description: >
+    추출된 텍스트의 분량과 타겟 언어의 난이도를 분석하여 견적을 산출하십시오. 
+    1,000만원 이상의 고액 건은 별도로 표시하십시오.
+  expected_output: "최종 금액, 산출 근거, 고액 여부가 포함된 견적서 데이터."
+  agent: price_optimizer
+
+notify_manager_task:
+  description: >
+    산출된 견적 내용을 Slack #general 채널에 보고하고 담당자의 검토를 요청하십시오.
+  expected_output: "Slack 메시지 전송 결과 보고."
+  agent: communication_manager
+
+send_to_client_task:
+  description: >
+    승인된 견적서를 클라이언트의 이메일로 정중하게 발송하십시오.
+  expected_output: "Gmail 발송 성공 여부."
+  agent: communication_manager
